@@ -54,6 +54,7 @@ p {
   margin: 0 auto 1rem;
 }
 
+/* Button and Input Styles */
 button {
   background-color: #1A5C4C;
   color: #E8E3D3;
@@ -101,6 +102,13 @@ a:hover {
 }
 
 /* Layout and responsiveness */
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -120,15 +128,19 @@ a:hover {
   }
 }
 
-.max-w-5xl {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
+/* Text Box and Feature Card Styles */
+.text-box {
+  background-color: rgba(26, 92, 76, 0.8);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Section-specific styles */
-header .max-w-2xl {
-  max-width: 48rem;
+.text-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .feature-card {
@@ -153,4 +165,16 @@ footer {
   margin-top: auto;
   padding: 1.5rem;
   text-align: center;
+}
+
+/* Scroll Animation with Intersection Observer */
+.animate-scroll-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-scroll-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
