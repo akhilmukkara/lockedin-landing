@@ -12,18 +12,30 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  line-height: 1.6;
+}
+
+header, section, footer {
+  padding: 2rem 1rem;
 }
 
 header {
   background: linear-gradient(to bottom, #1A5C4C, #1A1A1A);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1, h2, h3 {
   color: #E8E3D3;
+  font-weight: 700;
 }
 
 h1 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -32,15 +44,30 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5rem;
+}
+
 p {
-  line-height: 1.6;
+  max-width: 48rem;
+  margin: 0 auto 1rem;
 }
 
 button {
-  transition: background-color 0.3s, transform 0.3s;
+  background-color: #1A5C4C;
+  color: #E8E3D3;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
+button:hover:not(:disabled) {
+  background-color: #14B8A6;
   transform: scale(1.05);
 }
 
@@ -50,35 +77,35 @@ button:disabled {
 }
 
 input {
-  transition: box-shadow 0.3s;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(26, 92, 76, 0.5);
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
+}
+
+a {
+  color: #14B8A6;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #14B8A6;
+  color: #0D9488;
 }
 
 /* Layout and responsiveness */
-header, section {
-  padding: 1.5rem;
-}
-
-header {
-  flex-shrink: 0;
-}
-
-footer {
-  margin-top: auto;
-  flex-shrink: 0;
-}
-
 .grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
 @media (min-width: 640px) {
@@ -97,4 +124,33 @@ footer {
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Section-specific styles */
+header .max-w-2xl {
+  max-width: 48rem;
+}
+
+.feature-card {
+  background-color: #1A5C4C;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer {
+  margin-top: auto;
+  padding: 1.5rem;
+  text-align: center;
 }
